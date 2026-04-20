@@ -1,41 +1,63 @@
-# Prerequisites
-*.d
+# ====================================================================
+# C++ 專案標準 .gitignore
+# ====================================================================
 
-# Compiled Object files
-*.slo
-*.lo
+# --- 編譯過程產物 (Build Artifacts) ---
 *.o
 *.obj
-
-# Precompiled Headers
+*.slo
+*.lo
 *.gch
 *.pch
+*.d
+*.dwo
 
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
-
-# Compiled Dynamic libraries
+# --- 靜態與動態函式庫 (Libraries) ---
+*.lib
+*.a
+*.la
+*.lai
 *.so
 *.dylib
 *.dll
 
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
+# --- 執行檔與除錯檔 (Executables & Debugging) ---
 *.exe
 *.out
 *.app
+*.ilk
+*.pdb
+*.exp
 
-# debug information files
-*.dwo
+# --- 現代構建系統 (CMake / Make) ---
+# 忽略整個 build 資料夾（這是最推薦的做法）
+[Bb]uild/
+CMakeFiles/
+CMakeCache.txt
+CMakeScripts/
+cmake_install.cmake
+Makefile
+
+# --- 編輯器與 IDE 設定 (IDEs) ---
+# Visual Studio
+.vs/
+*.user
+*.sln.docstates
+
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# CLion / JetBrains
+.idea/
+cmake-build-*/
+
+# --- Fortran 相關 (如有混合開發) ---
+*.mod
+*.smod
+
+# --- 作業系統暫存檔 (OS specific) ---
+.DS_Store
+Thumbs.db
